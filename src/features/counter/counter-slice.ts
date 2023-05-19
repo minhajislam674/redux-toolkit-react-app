@@ -18,8 +18,11 @@ const counterSlice = createSlice({
     decremented(state) {
       state.value--;
     },
+    amountAdded(state, action: PayloadAction<number>) {
+      state.value += action.payload;
+    },
   },
 });
 
-export const { incremented } = counterSlice.actions;
+export const { incremented, decremented, amountAdded } = counterSlice.actions;
 export default counterSlice.reducer;
